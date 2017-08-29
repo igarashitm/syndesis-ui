@@ -161,7 +161,11 @@ export class DataMapperHostComponent extends FlowPage
         this.cfg.addJavaDocument(type, isSource);
         break;
       case 'json':
-        this.cfg.addJSONDocument(type, documentContents, isSource);
+      case 'json-instance':
+        this.cfg.addJSONInstanceDocument(type, documentContents, isSource);
+        break;
+      case 'json-schema':
+        this.cfg.addJSONSchemaDocument(type, documentContents, isSource);
         break;
       case 'xml-instance':
         this.cfg.addXMLInstanceDocument(type, documentContents, isSource);
@@ -227,10 +231,14 @@ export class DataMapperHostComponent extends FlowPage
       'addMockXMLInstanceSources',
       'addMockXMLSchemaSources',
       'addMockJSONSources',
+      'addMockJSONInstanceSources',
+      'addMockJSONSchemaSources',
       'addMockJavaTarget',
       'addMockXMLInstanceTarget',
       'addMockXMLSchemaTarget',
       'addMockJSONTarget',
+      'addMockJSONInstanceTarget',
+      'addMockJSONSchemaTarget',
       'debugDocumentServiceCalls',
       'debugMappingServiceCalls',
       'debugClassPathServiceCalls',
